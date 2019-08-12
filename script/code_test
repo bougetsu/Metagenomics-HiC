@@ -1,0 +1,34 @@
+###################################
+##find frac of contigs in T11/OG1RF
+###################################
+
+##download ref from ncbi##########
+
+#make blast db and blast contig.fa against
+REF='/ms/11/cong/project/HiC/data/ref'
+makeblastdb -in ${REF}/T11/GCF_000157475.1_ASM15747v1_genomic.fna -dbtype nucl -title -11
+makeblastdb -in ${REF}/OG1RF/GCF_004006275.1_ASM400627v1_genomic.fna -dbtype nucl -title -OG1RF
+
+DAT='/ms/11/cong/project/HiC/data/raw_data/1st_mouse'
+blastn -num_threads 8 -query ASSEMBLY/IDBAUD/contig.fa -task blastn -db ../../ref/OG1RF/GCF_004006275.1_ASM400627v1_genomic.fna -out idbua@OG1RF.tsv -evalue 1 -perc_identity 90 -outfmt '6 qseqid sseqid pident length qstart qend sstart send evalue bitscore  qcovs qcovhsp'
+awk '$4 > 1000 {print $0}' idbua\@OG1RF.tsv > idba_1000@OG1RF.tsv
+awk '{print $1}' idba_1000\@OG1RF.tsv | uniq |wc -l
+305
+
+
+blastn -num_threads 8 -query ASSEMBLY/IDBAUD/contig.fa -task blastn -db ../../ref/T11/GCF_000157475.1_ASM15747v1_genomic.fna -out idbua@T11.tsv -evalue 1 -perc_identity 90 -outfmt '6 qseqid sseqid pident length qstart qend sstart send evalue bitscore  qcovs qcovhsp'
+awk '$4 > 1000 {print $0}' idbua\@T11.tsv > idba_1000@T11.tsv
+idba_1000\@T11.tsv | uniq |wc -l
+281
+
+
+###########################################
+##blast against PLS DB
+###########################################
+blastn -num_threads 8 -query ASSEMBLY/IDBAUD/contig.fa -task blastn -db /ms/11/cong/data/PLS_db/1903/2019_03_05.fna -out idbua@PLS.tsv -evalue 1 -perc_identity 95 length 800 -outfmt '6 qseqid sseqid pident length qstart qend sstart send evalue bitscore qcovs qcovhsp'
+awk '$4 > 800 {print $0}' idbua\@PLS.tsv |sort -k 1,1n -k 3,3nr > idba_800@PLS.tsv
+
+PAD1='/ms/11/cong/project/HiC/data/ref/plasmid/pAD1_full.fasta'
+makeblastdb -in /ms/11/cong/project/HiC/data/ref/plasmid/pAD1_full.fasta -dbtype nucl
+blastn -num_threads 8 -query ASSEMBLY/IDBAUD/contig.fa -task blastn -db /ms/11/cong/project/HiC/data/ref/plasmid/pAD1_full.fasta -out idbua@PAD1.tsv -evalue 1 -perc_identity 95 -outfmt '6 qseqid sseqid pident length qstart qend sstart send evalue bitscore qcovs qcovhsp'
+awk '$4 > 800 {print $0}' idbua\@PAD1.tsv > idba_800@PAD1.tsv

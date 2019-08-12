@@ -1,0 +1,81 @@
+nohup: ignoring input
+START
+mkdir: cannot create directory ‘/ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT’: File exists
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+##################################
+metaphlan2
+0HIP11704_Palmer_SG_S6
+##################################
+Help message for read_fastx.py
+Warning! Biom python library not detected!
+ Exporting to biom format will not work!
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R2_001.fastq.gz
+0V583_Palmer_HC_S10
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R2_001.fastq.gz
+0V583_Palmer_SG_S5
+##################################
+metaphlan2
+0V583_Palmer_SG_S5
+##################################
+Help message for read_fastx.py
+Warning! Biom python library not detected!
+ Exporting to biom format will not work!
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R2_001.fastq.gz
+0VE14089_Palmer_HC_S7
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R2_001.fastq.gz
+0VE14089_Palmer_SG_S4
+##################################
+metaphlan2
+0VE14089_Palmer_SG_S4
+##################################
+Help message for read_fastx.py
+Warning! Biom python library not detected!
+ Exporting to biom format will not work!
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R2_001.fastq.gz
+13HIP11704_Palmer_HC_S6
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R2_001.fastq.gz
+13HIP11704_Palmer_SG_S3
+##################################
+metaphlan2
+13HIP11704_Palmer_SG_S3
+##################################
+Help message for read_fastx.py
+Warning! Biom python library not detected!
+ Exporting to biom format will not work!
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R2_001.fastq.gz
+13V583_Palmer_HC_S8
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R2_001.fastq.gz
+13V583_Palmer_SG_S8
+##################################
+metaphlan2
+13V583_Palmer_SG_S8
+##################################
+Help message for read_fastx.py
+Warning! Biom python library not detected!
+ Exporting to biom format will not work!
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R2_001.fastq.gz
+13VE14089_Palmer_HC_S9
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R2_001.fastq.gz
+13VE14089_Palmer_SG_S7
+##################################
+metaphlan2
+13VE14089_Palmer_SG_S7
+##################################
+Help message for read_fastx.py
+Warning! Biom python library not detected!
+ Exporting to biom format will not work!

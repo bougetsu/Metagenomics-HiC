@@ -1,0 +1,836 @@
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.021 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85798m, used=101m
+
+Added 216529 kmers; time: 	0.138 seconds.
+Memory: max=85899m, total=85899m, free=85647m, used=252m
+
+Input is being processed as paired
+Started output streams:	0.016 seconds.
+Processing time:   		357.414 seconds.
+
+Input:                  	95734000 reads 		14455834000 bases.
+QTrimmed:               	278318 reads (0.29%) 	1463314 bases (0.01%)
+FTrimmed:               	95734000 reads (100.00%) 	95734000 bases (0.66%)
+KTrimmed:               	74827018 reads (78.16%) 	4373850320 bases (30.26%)
+Trimmed by overlap:     	4332756 reads (4.53%) 	24906054 bases (0.17%)
+Total Removed:          	3628004 reads (3.79%) 	4495953688 bases (31.10%)
+Result:                 	92105996 reads (96.21%) 	9959880312 bases (68.90%)
+
+Time:                         	357.574 seconds.
+Reads Processed:      95734k 	267.73k reads/sec
+Bases Processed:      14455m 	40.43m bases/sec
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_SG_S6_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_SG_S6_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_SG_S6_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_SG_S6_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.039 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85798m, used=101m
+
+Added 216529 kmers; time: 	0.173 seconds.
+Memory: max=85899m, total=85899m, free=85647m, used=252m
+
+Input is being processed as paired
+Started output streams:	0.017 seconds.
+Processing time:   		625.249 seconds.
+
+Input:                  	174702820 reads 		17644984820 bases.
+QTrimmed:               	309155 reads (0.18%) 	1775101 bases (0.01%)
+FTrimmed:               	174702820 reads (100.00%) 	174702820 bases (0.99%)
+KTrimmed:               	19471348 reads (11.15%) 	592589128 bases (3.36%)
+Trimmed by overlap:     	6327398 reads (3.62%) 	34919576 bases (0.20%)
+Total Removed:          	883568 reads (0.51%) 	803986625 bases (4.56%)
+Result:                 	173819252 reads (99.49%) 	16840998195 bases (95.44%)
+
+Time:                         	625.445 seconds.
+Reads Processed:        174m 	279.33k reads/sec
+Bases Processed:      17644m 	28.21m bases/sec
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R2_001.fastq.gz
+0V583_Palmer_HC_S10
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.026 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85798m, used=101m
+
+Added 216529 kmers; time: 	0.139 seconds.
+Memory: max=85899m, total=85899m, free=85664m, used=235m
+
+Input is being processed as paired
+Started output streams:	0.031 seconds.
+Processing time:   		325.877 seconds.
+
+Input:                  	92428446 reads 		13956695346 bases.
+QTrimmed:               	219079 reads (0.24%) 	1307731 bases (0.01%)
+FTrimmed:               	92428446 reads (100.00%) 	92428446 bases (0.66%)
+KTrimmed:               	74558050 reads (80.67%) 	4385562360 bases (31.42%)
+Trimmed by overlap:     	3770416 reads (4.08%) 	21861934 bases (0.16%)
+Total Removed:          	3209646 reads (3.47%) 	4501160471 bases (32.25%)
+Result:                 	89218800 reads (96.53%) 	9455534875 bases (67.75%)
+
+Time:                         	326.062 seconds.
+Reads Processed:      92428k 	283.47k reads/sec
+Bases Processed:      13956m 	42.80m bases/sec
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R2_001.fastq.gz
+0V583_Palmer_SG_S5_L003_R1_001.fastq.gz
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.036 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85798m, used=101m
+
+Added 216529 kmers; time: 	0.168 seconds.
+Memory: max=85899m, total=85899m, free=85664m, used=235m
+
+Input is being processed as paired
+Started output streams:	0.034 seconds.
+Processing time:   		655.958 seconds.
+
+Input:                  	183473896 reads 		18530863496 bases.
+QTrimmed:               	1955923 reads (1.07%) 	4081083 bases (0.02%)
+FTrimmed:               	183473896 reads (100.00%) 	183473896 bases (0.99%)
+KTrimmed:               	24388876 reads (13.29%) 	762819378 bases (4.12%)
+Trimmed by overlap:     	7506362 reads (4.09%) 	41449436 bases (0.22%)
+Total Removed:          	1264764 reads (0.69%) 	991823793 bases (5.35%)
+Result:                 	182209132 reads (99.31%) 	17539039703 bases (94.65%)
+
+Time:                         	656.170 seconds.
+Reads Processed:        183m 	279.61k reads/sec
+Bases Processed:      18530m 	28.24m bases/sec
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R2_001.fastq.gz
+0VE14089_Palmer_HC_S7
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.035 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85781m, used=118m
+
+Added 216529 kmers; time: 	0.164 seconds.
+Memory: max=85899m, total=85899m, free=85630m, used=269m
+
+Input is being processed as paired
+Started output streams:	0.068 seconds.
+Processing time:   		304.853 seconds.
+
+Input:                  	85863326 reads 		12965362226 bases.
+QTrimmed:               	247954 reads (0.29%) 	1251496 bases (0.01%)
+FTrimmed:               	85863326 reads (100.00%) 	85863326 bases (0.66%)
+KTrimmed:               	63786968 reads (74.29%) 	3510422750 bases (27.08%)
+Trimmed by overlap:     	4358534 reads (5.08%) 	25028406 bases (0.19%)
+Total Removed:          	2108970 reads (2.46%) 	3622565978 bases (27.94%)
+Result:                 	83754356 reads (97.54%) 	9342796248 bases (72.06%)
+
+Time:                         	305.103 seconds.
+Reads Processed:      85863k 	281.42k reads/sec
+Bases Processed:      12965m 	42.50m bases/sec
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R2_001.fastq.gz
+0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.058 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85781m, used=118m
+
+Added 216529 kmers; time: 	0.196 seconds.
+Memory: max=85899m, total=85899m, free=85630m, used=269m
+
+Input is being processed as paired
+Started output streams:	0.049 seconds.
+Processing time:   		683.847 seconds.
+
+Input:                  	186058054 reads 		18791863454 bases.
+QTrimmed:               	2662449 reads (1.43%) 	5125898 bases (0.03%)
+FTrimmed:               	186058054 reads (100.00%) 	186058054 bases (0.99%)
+KTrimmed:               	16572454 reads (8.91%) 	502192028 bases (2.67%)
+Trimmed by overlap:     	5659586 reads (3.04%) 	31371926 bases (0.17%)
+Total Removed:          	787192 reads (0.42%) 	724747906 bases (3.86%)
+Result:                 	185270862 reads (99.58%) 	18067115548 bases (96.14%)
+
+Time:                         	684.108 seconds.
+Reads Processed:        186m 	271.97k reads/sec
+Bases Processed:      18791m 	27.47m bases/sec
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R2_001.fastq.gz
+13HIP11704_Palmer_HC_S6
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.041 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85798m, used=101m
+
+Added 216529 kmers; time: 	0.144 seconds.
+Memory: max=85899m, total=85899m, free=85664m, used=235m
+
+Input is being processed as paired
+Started output streams:	0.062 seconds.
+Processing time:   		534.942 seconds.
+
+Input:                  	158426418 reads 		23922389118 bases.
+QTrimmed:               	527643 reads (0.33%) 	2392413 bases (0.01%)
+FTrimmed:               	158426418 reads (100.00%) 	158426418 bases (0.66%)
+KTrimmed:               	110060642 reads (69.47%) 	5624865986 bases (23.51%)
+Trimmed by overlap:     	9307120 reads (5.87%) 	53191854 bases (0.22%)
+Total Removed:          	2396392 reads (1.51%) 	5838876671 bases (24.41%)
+Result:                 	156030026 reads (98.49%) 	18083512447 bases (75.59%)
+
+Time:                         	535.156 seconds.
+Reads Processed:        158m 	296.04k reads/sec
+Bases Processed:      23922m 	44.70m bases/sec
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R2_001.fastq.gz
+13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.070 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85781m, used=118m
+
+Added 216529 kmers; time: 	0.226 seconds.
+Memory: max=85899m, total=85899m, free=85630m, used=269m
+
+Input is being processed as paired
+Started output streams:	0.590 seconds.
+Processing time:   		935.454 seconds.
+
+Input:                  	285506504 reads 		28836156904 bases.
+QTrimmed:               	2905071 reads (1.02%) 	6817116 bases (0.02%)
+FTrimmed:               	285506504 reads (100.00%) 	285506504 bases (0.99%)
+KTrimmed:               	32857648 reads (11.51%) 	1006293182 bases (3.49%)
+Trimmed by overlap:     	10679540 reads (3.74%) 	62345914 bases (0.22%)
+Total Removed:          	1593438 reads (0.56%) 	1360962716 bases (4.72%)
+Result:                 	283913066 reads (99.44%) 	27475194188 bases (95.28%)
+
+Time:                         	936.284 seconds.
+Reads Processed:        285m 	304.94k reads/sec
+Bases Processed:      28836m 	30.80m bases/sec
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R2_001.fastq.gz
+13V583_Palmer_HC_S8
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.026 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85798m, used=101m
+
+Added 216529 kmers; time: 	0.173 seconds.
+Memory: max=85899m, total=85899m, free=85614m, used=285m
+
+Input is being processed as paired
+Started output streams:	0.159 seconds.
+Processing time:   		597.144 seconds.
+
+Input:                  	150812906 reads 		22772748806 bases.
+QTrimmed:               	529114 reads (0.35%) 	2315539 bases (0.01%)
+FTrimmed:               	150812906 reads (100.00%) 	150812906 bases (0.66%)
+KTrimmed:               	90774556 reads (60.19%) 	4672302998 bases (20.52%)
+Trimmed by overlap:     	8794164 reads (5.83%) 	50272628 bases (0.22%)
+Total Removed:          	2493676 reads (1.65%) 	4875704071 bases (21.41%)
+Result:                 	148319230 reads (98.35%) 	17897044735 bases (78.59%)
+
+Time:                         	597.484 seconds.
+Reads Processed:        150m 	252.41k reads/sec
+Bases Processed:      22772m 	38.11m bases/sec
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R2_001.fastq.gz
+13V583_Palmer_SG_S8
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/13V583_Palmer_SG_S8_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/13V583_Palmer_SG_S8_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/13V583_Palmer_SG_S8_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/13V583_Palmer_SG_S8_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.077 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85781m, used=118m
+
+Added 216529 kmers; time: 	0.203 seconds.
+Memory: max=85899m, total=85899m, free=85630m, used=269m
+
+Input is being processed as paired
+Started output streams:	0.481 seconds.
+Processing time:   		994.097 seconds.
+
+Input:                  	305102876 reads 		30815390476 bases.
+QTrimmed:               	516472 reads (0.17%) 	3796361 bases (0.01%)
+FTrimmed:               	305102876 reads (100.00%) 	305102876 bases (0.99%)
+KTrimmed:               	31190754 reads (10.22%) 	947340164 bases (3.07%)
+Trimmed by overlap:     	10422726 reads (3.42%) 	60392120 bases (0.20%)
+Total Removed:          	1507452 reads (0.49%) 	1316631521 bases (4.27%)
+Result:                 	303595424 reads (99.51%) 	29498758955 bases (95.73%)
+
+Time:                         	994.794 seconds.
+Reads Processed:        305m 	306.70k reads/sec
+Bases Processed:      30815m 	30.98m bases/sec
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R2_001.fastq.gz
+13VE14089_Palmer_HC_S9
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.031 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85781m, used=118m
+
+Added 216529 kmers; time: 	0.172 seconds.
+Memory: max=85899m, total=85899m, free=85630m, used=269m
+
+Input is being processed as paired
+Started output streams:	0.070 seconds.
+Processing time:   		379.970 seconds.
+
+Input:                  	99979136 reads 		15096849536 bases.
+QTrimmed:               	248145 reads (0.25%) 	1177194 bases (0.01%)
+FTrimmed:               	99979136 reads (100.00%) 	99979136 bases (0.66%)
+KTrimmed:               	67967344 reads (67.98%) 	3511459704 bases (23.26%)
+Trimmed by overlap:     	5903144 reads (5.90%) 	33788380 bases (0.22%)
+Total Removed:          	1793464 reads (1.79%) 	3646404414 bases (24.15%)
+Result:                 	98185672 reads (98.21%) 	11450445122 bases (75.85%)
+
+Time:                         	380.229 seconds.
+Reads Processed:      99979k 	262.94k reads/sec
+Bases Processed:      15096m 	39.70m bases/sec
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R2_001.fastq.gz
+13VE14089_Palmer_SG_S7
+java -Djava.library.path=/home/cxz163430/software/bbmap/jni/ -ea -Xmx80g -Xms80g -cp /home/cxz163430/software/bbmap/current/ jgi.BBDukF -Xmx80g in1=/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R1_001.fastq.gz in2=/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R2_001.fastq.gz ref=/home/cxz163430/software/bbmap/resources/adapters.fa out1=/ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_SG_S7_1.fastq.gz out2=/ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_SG_S7_2.fastq.gz k=23 ktrim=r mink=11 hdist=1 minlength=50 tpe tbo ftm=5 qtrim=r trimq=10
+Executing jgi.BBDukF [-Xmx80g, in1=/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R1_001.fastq.gz, in2=/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R2_001.fastq.gz, ref=/home/cxz163430/software/bbmap/resources/adapters.fa, out1=/ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_SG_S7_1.fastq.gz, out2=/ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_SG_S7_2.fastq.gz, k=23, ktrim=r, mink=11, hdist=1, minlength=50, tpe, tbo, ftm=5, qtrim=r, trimq=10]
+Version 38.22
+
+maskMiddle was disabled because useShortKmers=true
+0.024 seconds.
+Initial:
+Memory: max=85899m, total=85899m, free=85798m, used=101m
+
+Added 216529 kmers; time: 	0.131 seconds.
+Memory: max=85899m, total=85899m, free=85647m, used=252m
+
+Input is being processed as paired
+Started output streams:	0.039 seconds.
+Processing time:   		662.827 seconds.
+
+Input:                  	210198830 reads 		21230081830 bases.
+QTrimmed:               	273504 reads (0.13%) 	2713667 bases (0.01%)
+FTrimmed:               	210198830 reads (100.00%) 	210198830 bases (0.99%)
+KTrimmed:               	29515602 reads (14.04%) 	900099660 bases (4.24%)
+Trimmed by overlap:     	9281860 reads (4.42%) 	54114732 bases (0.25%)
+Total Removed:          	1337344 reads (0.64%) 	1167126889 bases (5.50%)
+Result:                 	208861486 reads (99.36%) 	20062954941 bases (94.50%)
+
+Time:                         	663.003 seconds.
+Reads Processed:        210m 	317.04k reads/sec
+Bases Processed:      21230m 	32.02m bases/sec
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+##################################
+##################################
+Filter Unpaired reads in HiC
+0HIP11704_Palmer_HC_S11
+##################################
+##################################
+TrimmomaticPE: Started with arguments:
+ -threads 16 -phred33 /ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_1.fastq.gz /ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_2.fastq.gz /ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_1_paied.fastq.gz /ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_1_single.fastq.gz /ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_2_paired.fastq.gz /ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_HC_S11_2_single.fastq.gz MINLEN:20
+Input Read Pairs: 46052998 Both Surviving: 46052998 (100.00%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 0 (0.00%)
+TrimmomaticPE: Completed successfully
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+gzip: /ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_SG_S6_1_paired.fastq.gz: No such file or directory
+gzip: /ms/11/cong/project/HiC/processed_reads/0HIP11704_Palmer_SG_S6_2_paired.fastq.gz: No such file or directory
+6samples.sh: line 35: fq2fa: command not found
+##################################
+IDBAUD
+0HIP11704_Palmer_SG_S6
+##################################
+6samples.sh: line 40: idba_ud: command not found
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R2_001.fastq.gz
+0V583_Palmer_HC_S10
+##################################
+##################################
+Filter Unpaired reads in HiC
+0V583_Palmer_HC_S10
+##################################
+##################################
+TrimmomaticPE: Started with arguments:
+ -threads 16 -phred33 /ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_1.fastq.gz /ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_2.fastq.gz /ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_1_paied.fastq.gz /ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_1_single.fastq.gz /ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_2_paired.fastq.gz /ms/11/cong/project/HiC/processed_reads/0V583_Palmer_HC_S10_2_single.fastq.gz MINLEN:20
+Input Read Pairs: 44609400 Both Surviving: 44609400 (100.00%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 0 (0.00%)
+TrimmomaticPE: Completed successfully
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R2_001.fastq.gz
+0V583_Palmer_SG_S5_L003_R1_001.fastq.gz
+gzip: /ms/11/cong/project/HiC/processed_reads/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz_1_paired.fastq.gz: No such file or directory
+gzip: /ms/11/cong/project/HiC/processed_reads/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz_2_paired.fastq.gz: No such file or directory
+6samples.sh: line 35: fq2fa: command not found
+##################################
+IDBAUD
+0V583_Palmer_SG_S5_L003_R1_001.fastq.gz
+##################################
+6samples.sh: line 40: idba_ud: command not found
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R2_001.fastq.gz
+0VE14089_Palmer_HC_S7
+##################################
+##################################
+Filter Unpaired reads in HiC
+0VE14089_Palmer_HC_S7
+##################################
+##################################
+TrimmomaticPE: Started with arguments:
+ -threads 16 -phred33 /ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_1.fastq.gz /ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_2.fastq.gz /ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_1_paied.fastq.gz /ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_1_single.fastq.gz /ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_2_paired.fastq.gz /ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_HC_S7_2_single.fastq.gz MINLEN:20
+Input Read Pairs: 41877178 Both Surviving: 41877178 (100.00%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 0 (0.00%)
+TrimmomaticPE: Completed successfully
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R2_001.fastq.gz
+0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz
+gzip: /ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz_1_paired.fastq.gz: No such file or directory
+gzip: /ms/11/cong/project/HiC/processed_reads/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz_2_paired.fastq.gz: No such file or directory
+6samples.sh: line 35: fq2fa: command not found
+##################################
+IDBAUD
+0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz
+##################################
+6samples.sh: line 40: idba_ud: command not found
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R2_001.fastq.gz
+13HIP11704_Palmer_HC_S6
+##################################
+##################################
+Filter Unpaired reads in HiC
+13HIP11704_Palmer_HC_S6
+##################################
+##################################
+TrimmomaticPE: Started with arguments:
+ -threads 16 -phred33 /ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_1.fastq.gz /ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_2.fastq.gz /ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_1_paied.fastq.gz /ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_1_single.fastq.gz /ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_2_paired.fastq.gz /ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_HC_S6_2_single.fastq.gz MINLEN:20
+Input Read Pairs: 78015013 Both Surviving: 78015013 (100.00%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 0 (0.00%)
+TrimmomaticPE: Completed successfully
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R2_001.fastq.gz
+13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz
+gzip: /ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz_1_paired.fastq.gz: No such file or directory
+gzip: /ms/11/cong/project/HiC/processed_reads/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz_2_paired.fastq.gz: No such file or directory
+6samples.sh: line 35: fq2fa: command not found
+##################################
+IDBAUD
+13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz
+##################################
+6samples.sh: line 40: idba_ud: command not found
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R2_001.fastq.gz
+13V583_Palmer_HC_S8
+##################################
+##################################
+Filter Unpaired reads in HiC
+13V583_Palmer_HC_S8
+##################################
+##################################
+TrimmomaticPE: Started with arguments:
+ -threads 16 -phred33 /ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_1.fastq.gz /ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_2.fastq.gz /ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_1_paied.fastq.gz /ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_1_single.fastq.gz /ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_2_paired.fastq.gz /ms/11/cong/project/HiC/processed_reads/13V583_Palmer_HC_S8_2_single.fastq.gz MINLEN:20
+Input Read Pairs: 74159615 Both Surviving: 74159615 (100.00%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 0 (0.00%)
+TrimmomaticPE: Completed successfully
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R2_001.fastq.gz
+13V583_Palmer_SG_S8
+gzip: /ms/11/cong/project/HiC/processed_reads/13V583_Palmer_SG_S8_1_paired.fastq.gz: No such file or directory
+gzip: /ms/11/cong/project/HiC/processed_reads/13V583_Palmer_SG_S8_2_paired.fastq.gz: No such file or directory
+6samples.sh: line 35: fq2fa: command not found
+##################################
+IDBAUD
+13V583_Palmer_SG_S8
+##################################
+6samples.sh: line 40: idba_ud: command not found
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R2_001.fastq.gz
+13VE14089_Palmer_HC_S9
+##################################
+##################################
+Filter Unpaired reads in HiC
+13VE14089_Palmer_HC_S9
+##################################
+##################################
+TrimmomaticPE: Started with arguments:
+ -threads 16 -phred33 /ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_1.fastq.gz /ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_2.fastq.gz /ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_1_paied.fastq.gz /ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_1_single.fastq.gz /ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_2_paired.fastq.gz /ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_HC_S9_2_single.fastq.gz MINLEN:20
+Input Read Pairs: 49092836 Both Surviving: 49092836 (100.00%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 0 (0.00%)
+TrimmomaticPE: Completed successfully
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R2_001.fastq.gz
+13VE14089_Palmer_SG_S7
+gzip: /ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_SG_S7_1_paired.fastq.gz: No such file or directory
+gzip: /ms/11/cong/project/HiC/processed_reads/13VE14089_Palmer_SG_S7_2_paired.fastq.gz: No such file or directory
+6samples.sh: line 35: fq2fa: command not found
+##################################
+IDBAUD
+13VE14089_Palmer_SG_S7
+##################################
+6samples.sh: line 40: idba_ud: command not found
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::substr: __pos (which is 1) > this->size() (which is 0)
+6samples_asm.sh: line 12: 15428 Aborted                 (core dumped) fq2fa --merge ${prc_data}/${SAMPLE}_1.fastq.gz ${prc_data}/${SAMPLE}_2.fastq.gz ${prc_data}/${SAMPLE}.fa
+##################################
+IDBAUD
+0HIP11704_Palmer_SG_S6
+##################################
+number of threads 12
+terminate called after throwing an instance of 'std::logic_error'
+  what():  ShortSequence: Sequence is too long.
+6samples_asm.sh: line 12: 15430 Aborted                 (core dumped) idba_ud -r ${prc_data}/${SAMPLE}.fa --num_threads 12 --pre_correction -o ${ASSM}/IDBAUD/{SAMPLE}
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R2_001.fastq.gz
+0V583_Palmer_HC_S10
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R2_001.fastq.gz
+0V583_Palmer_SG_S5
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::substr: __pos (which is 1) > this->size() (which is 0)
+6samples_asm.sh: line 12: 15434 Aborted                 (core dumped) fq2fa --merge ${prc_data}/${SAMPLE}_1.fastq.gz ${prc_data}/${SAMPLE}_2.fastq.gz ${prc_data}/${SAMPLE}.fa
+##################################
+IDBAUD
+0V583_Palmer_SG_S5
+##################################
+number of threads 12
+reads 0
+long reads 0
+extra reads 0
+read_length 0
+kmer 60
+kmers 0 0
+merge bubble 0
+contigs: 1 n50: 0 max: 0 mean: 0 total length: 0 n80: 0
+aligned 0 reads
+confirmed bases: 0 correct reads: 0 bases: 0
+kmer 20
+kmers 0 0
+merge bubble 0
+contigs: 1 n50: 0 max: 0 mean: 0 total length: 0 n80: 0
+aligned 0 reads
+confirmed bases: 0 correct reads: 0 bases: 0
+distance mean -nan sd -nan
+invalid insert distance
+kmer 40
+kmers 0 0
+merge bubble 0
+contigs: 1 n50: 0 max: 0 mean: 0 total length: 0 n80: 0
+aligned 0 reads
+confirmed bases: 0 correct reads: 0 bases: 0
+distance mean -nan sd -nan
+invalid insert distance
+kmer 60
+kmers 0 0
+merge bubble 0
+contigs: 1 n50: 0 max: 0 mean: 0 total length: 0 n80: 0
+aligned 0 reads
+confirmed bases: 0 correct reads: 0 bases: 0
+distance mean -nan sd -nan
+invalid insert distance
+kmer 80
+kmers 0 0
+merge bubble 0
+contigs: 1 n50: 0 max: 0 mean: 0 total length: 0 n80: 0
+aligned 0 reads
+confirmed bases: 0 correct reads: 0 bases: 0
+distance mean -nan sd -nan
+invalid insert distance
+kmer 100
+kmers 0 0
+merge bubble 0
+contigs: 1 n50: 0 max: 0 mean: 0 total length: 0 n80: 0
+reads 0
+aligned 0 reads
+distance mean -nan sd -nan
+invalid insert distance
+6samples_asm.sh: line 12: 15436 Segmentation fault      (core dumped) idba_ud -r ${prc_data}/${SAMPLE}.fa --num_threads 12 --pre_correction -o ${ASSM}/IDBAUD/{SAMPLE}
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R2_001.fastq.gz
+0VE14089_Palmer_HC_S7
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R2_001.fastq.gz
+0VE14089_Palmer_SG_S4
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::substr: __pos (which is 1) > this->size() (which is 0)
+6samples_asm.sh: line 12: 15451 Aborted                 (core dumped) fq2fa --merge ${prc_data}/${SAMPLE}_1.fastq.gz ${prc_data}/${SAMPLE}_2.fastq.gz ${prc_data}/${SAMPLE}.fa
+##################################
+IDBAUD
+0VE14089_Palmer_SG_S4
+##################################
+number of threads 12
+terminate called after throwing an instance of 'std::logic_error'
+  what():  ShortSequence: Sequence is too long.
+6samples_asm.sh: line 12: 15453 Aborted                 (core dumped) idba_ud -r ${prc_data}/${SAMPLE}.fa --num_threads 12 --pre_correction -o ${ASSM}/IDBAUD/{SAMPLE}
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R2_001.fastq.gz
+13HIP11704_Palmer_HC_S6
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R2_001.fastq.gz
+13HIP11704_Palmer_SG_S3
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::substr: __pos (which is 1) > this->size() (which is 0)
+6samples_asm.sh: line 12: 15457 Aborted                 (core dumped) fq2fa --merge ${prc_data}/${SAMPLE}_1.fastq.gz ${prc_data}/${SAMPLE}_2.fastq.gz ${prc_data}/${SAMPLE}.fa
+##################################
+IDBAUD
+13HIP11704_Palmer_SG_S3
+##################################
+number of threads 12
+terminate called after throwing an instance of 'std::logic_error'
+  what():  ShortSequence: Sequence is too long.
+6samples_asm.sh: line 12: 15459 Aborted                 (core dumped) idba_ud -r ${prc_data}/${SAMPLE}.fa --num_threads 12 --pre_correction -o ${ASSM}/IDBAUD/{SAMPLE}
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R2_001.fastq.gz
+13V583_Palmer_HC_S8
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R2_001.fastq.gz
+13V583_Palmer_SG_S8
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::substr: __pos (which is 1) > this->size() (which is 0)
+6samples_asm.sh: line 12: 15463 Aborted                 (core dumped) fq2fa --merge ${prc_data}/${SAMPLE}_1.fastq.gz ${prc_data}/${SAMPLE}_2.fastq.gz ${prc_data}/${SAMPLE}.fa
+##################################
+IDBAUD
+13V583_Palmer_SG_S8
+##################################
+number of threads 12
+terminate called after throwing an instance of 'std::logic_error'
+  what():  ShortSequence: Sequence is too long.
+6samples_asm.sh: line 12: 15465 Aborted                 (core dumped) idba_ud -r ${prc_data}/${SAMPLE}.fa --num_threads 12 --pre_correction -o ${ASSM}/IDBAUD/{SAMPLE}
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R2_001.fastq.gz
+13VE14089_Palmer_HC_S9
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R2_001.fastq.gz
+13VE14089_Palmer_SG_S7
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::substr: __pos (which is 1) > this->size() (which is 0)
+6samples_asm.sh: line 12: 15469 Aborted                 (core dumped) fq2fa --merge ${prc_data}/${SAMPLE}_1.fastq.gz ${prc_data}/${SAMPLE}_2.fastq.gz ${prc_data}/${SAMPLE}.fa
+##################################
+IDBAUD
+13VE14089_Palmer_SG_S7
+##################################
+number of threads 12
+terminate called after throwing an instance of 'std::logic_error'
+  what():  ShortSequence: Sequence is too long.
+6samples_asm.sh: line 12: 15471 Aborted                 (core dumped) idba_ud -r ${prc_data}/${SAMPLE}.fa --num_threads 12 --pre_correction -o ${ASSM}/IDBAUD/{SAMPLE}
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+##################################
+IDBAUD
+0HIP11704_Palmer_SG_S6
+##################################
+number of threads 12
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+6samples_asm.sh: line 22: [!: command not found
+##################################
+IDBAUD
+0HIP11704_Palmer_SG_S6
+##################################
+number of threads 16
+nohup: ignoring input
+TRIM START
+6samples_asm.sh: line 22: syntax error in conditional expression: unexpected token `;'
+6samples_asm.sh: line 22: syntax error near `;t'
+6samples_asm.sh: line 22: `		if [[ -e ${prc_data}/${SAMPLE}.fa]];then'
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+0HIP11704_Palmer_SG_S6 merged
+##################################
+IDBAUD
+0HIP11704_Palmer_SG_S6
+##################################
+number of threads 16
+reads 173819252
+long reads 0
+extra reads 0
+read_length 100
+kmer 60
+kmers 459706305 455564930
+merge bubble 22945
+contigs: 402569 n50: 1219 max: 245025 mean: 695 total length: 279828397 n80: 384
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+##################################
+PREPARE MERGED FA
+0HIP11704_Palmer_SG_S6
+##################################
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+##################################
+PREPARE MERGED FA
+0HIP11704_Palmer_SG_S6
+##################################
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+##################################
+PREPARE MERGED FA
+0HIP11704_Palmer_SG_S6
+##################################
+##################################
+IDBAUD
+0HIP11704_Palmer_SG_S6
+##################################
+number of threads 12
+reads 173819252
+long reads 0
+extra reads 0
+read_length 100
+kmer 60
+nohup: ignoring input
+TRIM START
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_HC_S11_L004_R2_001.fastq.gz
+0HIP11704_Palmer_HC_S11
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0HIP11704_Palmer_SG_S6_L004_R2_001.fastq.gz
+0HIP11704_Palmer_SG_S6
+0HIP11704_Palmer_SG_S6 merged
+##################################
+IDBAUD
+0HIP11704_Palmer_SG_S6
+##################################
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_HC_S10_L004_R2_001.fastq.gz
+0V583_Palmer_HC_S10
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0V583_Palmer_SG_S5_L003_R2_001.fastq.gz
+0V583_Palmer_SG_S5
+merging 0V583_Palmer_SG_S5
+##################################
+IDBAUD
+0V583_Palmer_SG_S5
+##################################
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_HC_S7_L004_R2_001.fastq.gz
+0VE14089_Palmer_HC_S7
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/0VE14089_Palmer_SG_S4_L003_R2_001.fastq.gz
+0VE14089_Palmer_SG_S4
+merging 0VE14089_Palmer_SG_S4
+##################################
+IDBAUD
+0VE14089_Palmer_SG_S4
+##################################
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_HC_S6_L004_R2_001.fastq.gz
+13HIP11704_Palmer_HC_S6
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13HIP11704_Palmer_SG_S3_L003_R2_001.fastq.gz
+13HIP11704_Palmer_SG_S3
+merging 13HIP11704_Palmer_SG_S3
+##################################
+IDBAUD
+13HIP11704_Palmer_SG_S3
+##################################
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_HC_S8_L004_R2_001.fastq.gz
+13V583_Palmer_HC_S8
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13V583_Palmer_SG_S8_L004_R2_001.fastq.gz
+13V583_Palmer_SG_S8
+merging 13V583_Palmer_SG_S8
+##################################
+IDBAUD
+13V583_Palmer_SG_S8
+##################################
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_HC_S9_L004_R2_001.fastq.gz
+13VE14089_Palmer_HC_S9
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R1_001.fastq.gz
+/ms/11/cong/data/raw_data/HiC/13VE14089_Palmer_SG_S7_L004_R2_001.fastq.gz
+13VE14089_Palmer_SG_S7
+merging 13VE14089_Palmer_SG_S7
+##################################
+IDBAUD
+13VE14089_Palmer_SG_S7
+##################################

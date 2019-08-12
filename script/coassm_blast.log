@@ -1,0 +1,4 @@
+nohup: ignoring input
+awk: cannot open Coassembly_V583_genome.tsv (No such file or directory)
+awk: cannot open Coassembly_HIP_genome.tsv (No such file or directory)
+awk: cannot open Coassembly_rep.tsv (No such file or directory)

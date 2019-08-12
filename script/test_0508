@@ -1,0 +1,97 @@
+cd ~/software
+wget http://ab.inf.uni-tuebingen.de/data/software/megan6/download/MEGAN_Community_unix_6_15_2.sh
+chmod u+x MEGAN
+
+
+
+megan/class/resources/files
+wget -c http://www-ab2.informatik.uni-tuebingen.de/megan/taxonomy/ncbi.zip
+unzip ncbi.zip
+rm ncbi.zip
+mkdir MEGAN_resource
+cd MEGAN-resource
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/prot_acc2tax-Aug2016.abin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/nucl_acc2tax-Aug2016.abin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/prot_gi2tax-Aug2016X.bin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/nucl_gi2tax-Aug2016.bin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/gi2eggnog-June2016X.bin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/acc2eggnog-June2016X.abin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/gi2interpro-June2016X.bin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/acc2interpro-June2016X.abin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/gi2seed-May2015X.bin.zip
+wget -c http://ab.inf.uni-tuebingen.de/data/software/megan6/download/gi2kegg-Aug2016X-ue.bin.zip
+# prot_acc2tax-Aug2016.abin.zip Protein accession to NCBI-taxonomy mapping file. Must be unzipped before use.
+# nucl_acc2tax-Aug2016.abin.zip Nucleotide accession to NCBI-taxonomy mapping file. Must be unzipped before use.
+# prot_gi2tax-Aug2016X.bin.zip GI to NCBI-taxonomy mapping file. Must be unzipped before use. Please note that NCBI is discontinuing the use of GI numbers.
+# nucl_gi2tax-Aug2016.bin.zip GI to NCBI-taxonomy mapping file. Must be unzipped before use. Please note that NCBI is discontinuing the use of GI numbers.
+# gi2eggnog-June2016X.bin.zip GI to eggNOG mapping file. Must be unzipped before use.
+# acc2eggnog-June2016X.abin.zip Accession to eggNOG mapping file. Must be unzipped before use.
+# gi2interpro-June2016X.bin.zip GI to InterPro mapping file. Must be unzipped before use.
+# acc2interpro-June2016X.abin.zip Accession to InterPro mapping file. Must be unzipped before use.
+# gi2seed-May2015X.bin.zip GI to SEED mapping file. Must be unzipped before use.
+# Additional mapping files for the Ultimate Edition:
+# gi2kegg-Aug2016X-ue.bin.zip GI to KEGG mapping file. Only for use with the Ultimate Edition of MEGAN. Must be unzipped before use.
+
+#####################################
+############DIAMOND##################
+#####################################
+
+dat='/net/ab/cb/68/cxz163430/project/HiC/data'
+db='/net/ab/cb/68/cxz163430/data/NCBI_nr'
+res='/net/ab/cb/68/cxz163430/project/HiC/Taxo/1st_mouse'
+nohup diamond blastx -p 24 --query ${dat}/Mouse_Fecal_ShortGun_2.fastq --db ${db}/nr --daa ${res}/mouse_sh_2.daa > diamond_2.log 2>&1 &
+
+######################################################
+
+grep "pilon" metacompass.tsv | awk '{print $3}'|uniq > ref_fa_id.txt
+seqkit grep --pattern-file ref_fa_id.txt ~/software/MetaCompass/refseq/bac_gen.fna > ref_used.fa
+grep ">" ref_used.fa |delete pTEF sequence
+seqkit grep --pattern-file id_list.txt ~/software/MetaCompass/refseq/bacgeno.fna > 2nd_ref.fa
+cat /ms/11/cong/project/HiC/data/ref/plasmid/pAD1_TN917.fa >> 2nd_ref.fa
+ cat /ms/11/cong/project/HiC/data/ref/T11/GCF_000157475.1_ASM15747v1_genomic.fna >> 2nd_ref.fa 
+
+kraken2-build --standard --threads 24 --db Kraken2_db/
+export ASM='/net/ab/cb/68/cxz163430/project/HiC/ASSEMBLY/MetaCompass/1st_mouse'
+export RES='/net/ab/cb/68/cxz163430/project/HiC/Taxo'
+kraken2 --db --
+kraken2 --db $DBNAME --threads 6 ${ASM}/metacompass.final.ctg.fa --output ${RES}/1st_mouse/1stmouse_mc_contig.krak
+kraken2 --db /net/ab/cb/68/cxz163430/data/Kraken2_db --threads 16 --use-names ${ASM}/metacompass.final.ctg.fa --output ${RES}/1st_mouse/1stmouse_mc_contig_name.krak --report ${RES}/1st_mouse/1stmouse_mc_contig.kreport
+>>>>>>>>>>>>>>>>>>
+Loading database information... done.
+25604 sequences (93.65 Mbp) processed in 1.092s (1406.4 Kseq/m, 5144.11 Mbp/m).
+  13375 sequences classified (52.24%)
+  12229 sequences unclassified (47.76%)
+>>>>>>>>>>>>>>>>>>>
+kraken2 --db /net/ab/cb/68/cxz163430/data/Kraken2_db --threads 16  --use-names--paired ~/project/HiC/data/Mouse_Fecal_ShortGun_1.fastq ~/project/HiC/data/Mouse_Fecal_ShortGun_2.fastq --output ${RES}/1st_mouse/1stmouse_mc_reads_name.krak --report ${RES}/1st_mouse/1stmouse_mc_reads.kreport
+
+132368736 sequences (37864.59 Mbp) processed in 265.071s (29962.2 Kseq/m, 8570.81 Mbp/m).
+  84457300 sequences classified (63.80%)
+  47911436 sequences unclassified (36.20%)
+
+
+kraken2 --db $DBNAME --threads 6  --gzip-compressed --paired seqs.fa
+
+
+
+
+export ASM='/ms/11/cong/project/HiC/ASSEMBLY/MetaCompass_1st_mouse/metacompass.final.ctg.fa'
+export dat='/ms/11/cong/project/HiC/data/raw_data/1st_mouse/processed_data/1st_mouse_hic2mc904.bam'
+export BIN='/ms/11/cong/project/HiC/BINNING/1st_mouse/MetaCompass'
+
+~/software/bin3C/bin3C.py mkmap -e MluCI -e Sau3AI -v ${ASM} ${dat}  ${BIN}/bin3C/map_default
+
+~/software/bin3C/bin3C.py cluster -v ${BIN}/bin3C/map_default/contact_map.p.gz ${BIN}/bin3C/clust_default
+
+
+###############################
+export ASM='/ms/11/cong/project/HiC/data/raw_data/1st_mouse/ASSEMBLY/IDBAUD/contig.fa'
+export RES='/ms/11/cong/project/HiC/data/raw_data/1st_mouse/BIN_CLASSIFICATION_idbuda_0214'
+
+grep ">" ${ASM=}|awk '{print $1}'|sed -e 's/^>//' > ${RES}/all_contig_list
+awk '{print $1}' ${RES}/contig_taxonomy.tab > annoted_contig_list
+comm -23 <(sort ${RES}/all_contig_list)  <(sort ${RES}/annoted_contig_list) > ${RES}/unannoted_contig_list
+mkdir unbinned
+seqkit grep --pattern-file ${RES}/unannoted_contig_list ${ASM}| seqkit seq -m 800 > unbinned/unbinned.fa
+move to /net/ab/cb/68/cxz163430/project/HiC/Taxo/1st_mouse/unbinned_idba/unbinned.fa
+
+metawrap classify_bins -b /net/ab/cb/68/cxz163430/project/HiC/Taxo/1st_mouse/unbinned_idba -o /net/ab/cb/68/cxz163430/project/HiC/Taxo/1st_mouse/unbinned_idba -t 24

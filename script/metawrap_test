@@ -1,0 +1,118 @@
+
+
+##########using reads from bbduk
+##########assembly idbaud
+source activate metawrap-env
+
+nohup metawrap binning -o INITIAL_BINNING -t 36 -a ASSEMBLY/IDBAUD/contig.fa --metabat2 --maxbin2 --concoct CLEAN_READS/Mouse_Fecal_ShortGun_* > binnning.log 2>&1 &
+
+
+nohup metawrap binning -o INITIAL_BINNING -t 36 -a ASSEMBLY/Metaspades/mouse_fecal_contigs.fasta --metabat2 --maxbin2 --concoct CLEAN_READS/Mouse_Fecal_ShortGun_* > binnning_sp.log 2>&1 &
+
+
+
+metawrap kraken -o KRAKEN -t 36 -s 1000000 CLEAN_READS/Mouse_Fecal_ShortGun_* ASSEMBLY/IDBAUD/contig.fa
+
+
+nohup metawrap bin_refinement -o BIN_REFINEMEN_idbuad_mm -t 96 -A INITIAL_BINNING_idbaud/metabat2_bins/ -B INITIAL_BINNING_idbaud/maxbin2_bins/  -c 50 -x 10 > refinement_idbuad.log 2>&1 &
+metawrap classify_bins -b BIN_REFINEMENT_idbuad_mm/metawrap_bins -o BIN_CLASSIFICATION_idbuad_mm -t 24
+
+nohup metawrap bin_refinement -o BIN_REFINEMENT -t 30 -A INITIAL_BINNING_sp/metabat2_bins/ -B INITIAL_BINNING_sp/maxbin2_bins/ -C INITIAL_BINNING_sp/proximeta_bins/ -c 50 -x 10 > refinement_sp.log 2>&1 &
+
+
+nohup metawrap reassemble_bins -o BIN_REASSEMBLY -1 CLEAN_READS/Mouse_Fecal_ShortGun_1.fastq -2 CCLEAN_READS/Mouse_Fecal_ShortGun_2.fastq -t 30 -m 800 -c 50 -x 10 -b BIN_REFINEMENT/metawrap_bins > reassemble_sp.log 2>&1 &
+
+
+nohup metawrap quant_bins -b BIN_REFINEMENT/metawrap_bins -o QUANT_BINS -a ASSEMBLY/Metaspades/mouse_fecal_contigs.fasta CLEAN_READS/Mouse_Fecal_ShortGun_* > quant_bins.log 2>&1 &
+
+
+metawrap classify_bins -b BIN_REFINEMENT/metawrap_bins -o BIN_CLASSIFICATION -t 24
+
+
+
+
+blastn -query /home/cxz163430/Work/project/data/ncbi-genomes-2018-03-19/entero_genome.fna -db /home/cxz163430/Work/project/data/db/card_nucleotide_fasta_protein_homolog -outfmt 11 -out "entero_genome.blastn@card_np_homolog.asn" -num_threads 8
+
+blastn  –query /ms/11/cong/project/HiC/data/raw_data/1st_mouse/ASSEMBLY/IDBAUD/contig.fa –db /ms/11/cong/project/HiC/data/plasmid/pAD1.fasta –out idbaud@pAD1 -outfmt "7 qseqid sseqid pident length qcovs qstart qend sstart send evalue bitscore"
+
+
+###########bin3C
+bin3C.py mkmap -e MluCI -e Sau3AI -v contigs.fasta.gz hic2ctg.bam bin3c_out
+
+python2 ./bin3C cluster -v bin3c_out/contact_map.p.gz bin3c_clust
+
+
+
+
+#############defaul bin3C
+###########checkM completedness > 8
+####delete no clustered
+
+rename "s/CL0/bin./" 
+rename "s/fna/fa/"
+sed -i "s#>CL[0-9]*_[0-9]* contig:\(contig-[0-9]*_[0-9]*\) .*#>\1#g" INITIAL_BINNING_idbaud/bin3c_bins/*
+
+
+sed -i "s#>CL[0-9]*_[0-9]* contig:\(k[0-9]*_[0-9]*\) ori:UNKNOWN length:[0-9]*#>\1#g"
+
+
+
+nohup metawrap bin_refinement -o BIN_REFINEMEN_idbuad_0214 -t 96 -A INITIAL_BINNING_idbaud/metabat2_bins/ -B INITIAL_BINNING_idbaud/maxbin2_bins/ -C INITIAL_BINNING_idbaud/bin3c_bins/  -c 50 -x 10 > refinement_idbuad.log 2>&1 &
+
+metawrap blobology -a ASSEMBLY/IDBAUD/contig.fa -t 24 -o BLOBOLOGY --bins BIN_REFINEMEN_idbuad_0214/metawrap_bins CLEAN_READS/Mouse_Fecal_ShortGun_*.fastq
+
+metawrap classify_bins -b BIN_REFINEMEN_idbuad_0214/metawrap_bins -o BIN_CLASSIFICATION_idbuda_0214
+
+metaWRAP annotate_bins -o FUNCT_ANNOT_idbuad_0214 -t 4 -b  BIN_REFINEMEN_idbuad_0214/metawrap_bins
+
+metawrap classify_bins -b BIN_REASSEMBLY_idbuad/reassembled_bins -o BIN_CLASSIFICATION_reassembly_idbuad_0214 -t 48
+
+
+snakemake --use-conda -s MAGpy -j 10 -k
+
+############################metaphlan
+merge_metaphlan_tables.py *_profile.txt > merged_abundance_table.txt
+grep -E "(s__)|(^ID)" merged_abundance_table.txt | grep -v "t__" | sed 's/^.*s__//g' > merged_abundance_table_species.txt
+hclust2.py -i merged_abundance_table_species.txt -o abundance_heatmap_species.png --ftop 25 --f_dist_f braycurtis --s_dist_f braycurtis --cell_aspect_ratio 0.5 -l --flabel_size 6 --slabel_size 6 --max_flabel_len 100 --max_slabel_len 100 --minv 0.1 --dpi 300
+export2graphlan.py --skip_rows 1,2 -i merged_abundance_table.txt --tree merged_abundance.tree.txt --annotation merged_abundance.annot.txt --most_abundant 100 --abundance_threshold 1 --least_biomarkers 10 --annotations 5,6 --external_annotations 7 --min_clade_size 1
+
+
+###################################################################################
+#####################################################################################
+grep -r ">contig" maxbin2_bins/ |sed "s#maxbin2_bins/##g" |sed "s#\.fa:>#\t#g" 
+
+
+
+#################cocacola
+
+source activate metawrap-env
+source activate concoct_env
+
+
+cd /ms/11/cong/project/HiC/data/raw_data/1st_mouse/INITIAL_BINNING_idbaud
+python ~/software/CONCOCT/scripts/fasta_to_features.py assembly.fa 34082 4 kmer_4_tmp.csv
+cp assembly.fa contig_1k.fa
+sed -i "s#\(>contig-100_[0-9]*\) length.*#\1#g" contig_1k.fa 
+
+
+source activate cocacola_env
+########copy all the used files to cocacola/data
+########consider change ENV variale
+python cocacola.py --contig_file data/idbuad/contig_1k.fa --abundance_profiles data/idbuad/concoct_depth.txt --composition_profiles data/idbuad/kmer_4_tmp.csv --output data/idbuad/cocacola_test.csv
+
+
+#######################################################
+######################################################
+python3 SolidBin.py --contig_file data/idbuad/contig_1k.fa --coverage_profiles data/idbuad/concoct_depth.txt --composition_profiles data/idbuad/kmer_4_tmp.csv --output data/idbuad/solidbin_test
+extract_fasta_bins.py original_contigs.fa concoct_output/clustering_merged.csv --output_path concoct_output/fasta_bins
+
+
+
+
+########################################################
+########################################################
+#####BLAST CONTIGS @ PLS_DBA###########################
+########################################################
+########################################################
+blastn -num_threads 8 -query IDBAUD/contig.fa -task blastn -db /ms/11/cong/data/PLS_db/1903/2019_03_05.fna -out idbuda@pls.tsv -evalue 1 -perc_identity 90 -outfmt '6 qseqid sseqid qstart qend sstart send evalue bitscore pident qcovs qcovhsp'
+awk '$9 > 98 && $7 < 0.001 { print $0 }' idbuda@pls.tsv > idbaud98.tsv
