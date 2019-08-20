@@ -63,13 +63,18 @@ bwa mem -t 24 -5SP ${ASSM}/final.contigs.fa  '<zcat ${HCdat}/*1_paied.fastq.gz' 
     samtools sort -n -o ${HCdat}/Coassem_150pe_2316.bam -
 ##download to local work station, cannot let bin3C work on either mz or aleph....
 
-./bin3C.py mkmap -e MluCI -e Sau3AI -v /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/final.contigs.fa /ms/11/cong/project/HiC/BINNING/150PE_coassembly/Coassem_150pe_2316.bam /ms/11/cong/project/HiC/BINNING/150PE_coassembly/bin3C
+./bin3C.py mkmap -e MluCI -e Sau3AI  --min-reflen 1500 -v /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/final.contigs.fa /ms/11/cong/project/HiC/BINNING/150PE_coassembly/Coassem_150pe_2316.bam /ms/11/cong/project/HiC/BINNING/150PE_coassembly/bin3C_1k5
 
 bin3C  cluster --no-spades --only-large  -v /ms/11/cong/project/HiC/BINNING/150PE_coassembly/bin3C/contact_map.p.gz /home/cxz163430/Project/HiC/bin3C/cluster
 
 
 ###USING DE NISCO
-bin3C  cluster --no-spades --only-large  -v /home/cxz163430/Project/HiC/data/contact_map.p.gz /ms/11/cong/project/HiC/BINNING/150PE_coassembly/bin3C/cluster
+bin3C  cluster --no-spades --only-large  -v /home/cxz163430/Project/HiC/data/contact_map.p.gz /home/cxz163430/Project/HiC/bin3C/cluster
+
+bin/python2 ./bin3C.py mkmap -e MluCI -e Sau3AI  --min-reflen 1500 -v /home/cxz163430/Project/HiC/data/CoAssembly_150pe.contigs.fa /home/cxz163430/Project/HiC/data/Coassem_150pe_2316.bam /home/cxz163430/Project/HiC/bin3C/map_1k5
+
+
+
 ```
 
 __Got memory error__ : bin3C failed to run on mz and aleph, and my desktop doesn't have enough memmory :)
@@ -94,6 +99,15 @@ diamond blastx \
  --sensitive \
  --max-target-seqs 1 \
  --evalue 1e-25 
+
+
+
+
+blobtools taxify \ 
+ -f diamond.out \
+ -m uniprot_ref_proteomes.taxids 
+ -s 0 \ # column of sequenceID of subject in taxID mapping file
+ -t 2 # column of TaxID of sequenceID in taxID mapping file
 ```
 
 
@@ -169,3 +183,127 @@ Is it right to using nr?? what if the reads mapped to a un-translated region??
 
 
 ###CRISPR
+
+
+
+
+###REMOVE PYTHON AND CONDA on alepha
+
+###re-install python2
+http://thelazylog.com/install-python-as-local-user-on-linux/
+
+```sh
+mkdir /net/ab/cb/68/cxz163430/local/python2.7
+cd python2.7
+wget "https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tgz"
+tar xzvf Python-2.7.16.tgz
+find /net/ab/cb/68/cxz163430/local/python2.7 -type d | xargs chmod 0755
+cd Python2.7.16
+./configure --prefix=/net/ab/cb/68/cxz163430/local/python2.7
+make && make install
+cd ..
+wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py --user
+
+
+```
+
+```Executing transaction: - WARNING conda.core.envs_manager:register_env(46): Unable to register environment. Path not writable or missing.
+
+  environment location: /net/ab/cb/68/cxz163430/miniconda3
+
+  registry file: /net/ab/cb/68/cxz163430/.conda/environments.txt
+
+done
+
+installation finished.
+
+WARNING:
+    You currently have a PYTHONPATH environment variable set. This may cause
+    unexpected behavior when running the Python interpreter in Miniconda3.
+    For best results, please verify that your PYTHONPATH only points to
+    directories of packages that are compatible with the Python interpreter
+    in Miniconda3: /net/ab/cb/68/cxz163430/miniconda3
+```
+
+
+
+###Individual mapping bam files to co-assembly
+
+```
+##running on mz
+###bwa
+
+ASM='/net/zmf2/cb/9/cxz163430/project/Hic/Assembly/CoAssembly_150PE'
+HiCMap='/net/zmf2/cb/9/cxz163430/project/Hic/Binning_150PE/CoAsm/HiC_mapping'
+prc_data='/net/zmf2/cb/9/cxz163430/project/Hic/processed_data'
+
+bwa mem -t 8 -5SP ${ASM}/final.contigs.fa ${prc_data}/${SAMPLE}_1_paied.fastq.gz ${prc_data}/${SAMPLE}_2_paired.fastq.gz | \
+    samtools view -h -F 2316 -bS -@ 24 - | \
+    samtools sort -n -o ${HiCMap}/${BASE}_hic2CoAsm2316_150pe.bam -
+
+##check total HiC counts
+
+##Normalize it?? across samples
+
+
+```
+
+
+/net/ab/cb/68/cxz163430/miniconda3/envs/metawrap-env/bin/metawrap-scripts/split_salmon_out_into_bins.py /net/ab/cb/68/cxz163430/project/HiC/Binning/BINNING_CO_150PE/QUANT_BINS_RF/quant_files/ /net/ab/cb/68/cxz163430/project/HiC/Binning/BINNING_CO_150PE/BIN_REFINEMENT/metawrap_50_10_bins /net/ab/cb/68/cxz163430/project/HiC/ASSEMBLY/Megahit_coasm_150pe/final.contigs.fa  > /net/ab/cb/68/cxz163430/project/HiC/Binning/BINNING_CO_150PE/QUANT_BINS_RF/bin_abundance_table.tab
+
+
+/net/ab/cb/68/cxz163430/miniconda3/envs/metawrap-env/bin/metawrap-scripts/make_heatmap.py /net/ab/cb/68/cxz163430/project/HiC/Binning/BINNING_CO_150PE/QUANT_BINS_RF/bin_abundance_table.tab /net/ab/cb/68/cxz163430/project/HiC/Binning/BINNING_CO_150PE/QUANT_BINS_RF/bin_abundance_heatmap.png
+
+##de-replicate binning results.. try it later
+
+need seperate bining results and coassembly
+
+
+```
+~/software/drep/bin/dRep dereplicate metawrap -g metawrap_50_10_bins/*.fa 
+```
+
+
+##get CRISPR and Res/Rep results
+
+
+```
+/home/cxz163430/software/CRISPRCasFinder//home/cxz163430/software/CRISPRCasFinder
+
+perl  -keep -i /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/final.contigs.fa -o /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/crisper -html -meta -gscf -cas -cpuM 8
+```
+
+
+ARG homologues were identified using BLASTN with the nucleotide sequences extracted from the Prodigal ORF locations as a query against the transferrable ARG ResFinder database [57]. Hits with a minimum 95% nucleotide sequence identity and 90% ARG sequence coverage were retained as candidate ARGs. 
+
+
+
+```
+
+conda activate blobtools
+export PYTHONPATH=/net/ab/cb/68/cxz163430/miniconda3/lib/python3.7/site-packages
+bblobtools taxify 
+ASM='/net/ab/cb/68/cxz163430/project/HiC/ASSEMBLY/Megahit_coasm_150pe'
+blobtools taxify -f ${ASM}/assembly.vs.refpro.1e25.diamond.out -m /net/ab/cb/68/cxz163430/data/Uniprot/uniprot_ref_proteomes.taxids -s 0 -t 2 -o ${ASM}/blob_taxify
+
+
+
+###ab1
+python3 resfinder.py -i ${ASM}/final.contigs.fa -o ${ASM}/ResFinder -p /net/ab/cb/68/cxz163430/software/resfinder_db -mp ~/local/blast/bin/blastn -t 0.90 -l 0.60 > ${ASM}/resfinder.log
+
+
+##local CRIPRFINDER
+
+##ab2
+
+```
+
+1. blobtools
+
+2. plots showing the abundance of each sample using taxo annotated bins
+
+3. summary of each HiC samples aligned to coassembly
+
+4. get HiC coverage of each samples on coassembly
+
+
