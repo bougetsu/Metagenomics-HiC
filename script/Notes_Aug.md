@@ -270,7 +270,7 @@ need seperate bining results and coassembly
 ```
 /home/cxz163430/software/CRISPRCasFinder//home/cxz163430/software/CRISPRCasFinder
 
-perl  -keep -i /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/final.contigs.fa -o /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/crisper -html -meta -gscf -cas -cpuM 8
+perl  -keep -i /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/final.contigs.fa -o /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/crisper -html -gscf -cas -cpuM 16
 ```
 
 
@@ -303,6 +303,25 @@ python3 resfinder.py -i ${ASM}/final.contigs.fa -o ${ASM}/ResFinder -p /net/ab/c
 2. plots showing the abundance of each sample using taxo annotated bins
 
 3. summary of each HiC samples aligned to coassembly
+
+
+
+```
+dat='/ms/11/cong/data/raw_data/HiC'
+out='/ms/11/cong/project/HiC/data/ReadsQC/HiC'
+for F in ${dat}/*HC*R1_001.fastq.gz; do 
+  R=${F%R1_001.fastq.gz}R2_001.fastq.gz
+  BASE=${F##*/}
+  SAMPLE=${BASE%PALMER*}
+  fastqc -q -t 12 -o ${out} -f fastq $F $R
+done  
+
+fastqc -q -t $threads -o ${out}/pre-QC_report -f fastq $reads_1 $reads_2
+
+```
+
+
+
 
 4. get HiC coverage of each samples on coassembly
 
