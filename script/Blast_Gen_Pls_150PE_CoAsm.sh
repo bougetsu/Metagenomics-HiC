@@ -19,18 +19,18 @@ mkdir -p ${ASM}/blast_result/filtered
 
 file="${ASM}/final.contigs.fa"
 
-blastn -query ${file} -db ${V583}/V583 -perc_identity 90 -num_threads 16  -outfmt '6 qseqid sseqid pident mismatch gapopen qlen slen length qstart qend sstart send evalue' -out ${ASM}/blast_result/CoAsm_V583_genome.tsv
-blastn -query ${file} -db ${PLASMID_FINDER}/plasmidfinder_db/AllRep -perc_identity 90 -num_threads 16 -outfmt '6 qseqid sseqid pident mismatch gapopen qlen slen length qstart qend sstart send evalue' -out ${ASM}/blast_result/CoAsm_rep.tsv
-blastn -query ${file} -db ${HIP}/HIP11704 -perc_identity 90 -num_threads 16 -outfmt '6 qseqid sseqid pident mismatch gapopen qlen slen length qstart qend sstart send evalue' -out ${ASM}/blast_result/CoAsm_HIP_genome.tsv
-#blastn -query ${file} -db ${PLS} -perc_identity 90 -num_threads 8 -outfmt '6 qseqid sseqid pident mismatch gapopen qlen slen length qstart qend sstart send evalue' -out ${ASM}/blast_result/CoAsm_plsdb.tsv
+#blastn -query ${file} -db ${V583}/V583 -perc_identity 90 -num_threads 16  -outfmt '6 qseqid sseqid pident mismatch gapopen qlen slen length qstart qend sstart send evalue' -out ${ASM}/blast_result/CoAsm_V583_genome.tsv
+#blastn -query ${file} -db ${PLASMID_FINDER}/plasmidfinder_db/AllRep -perc_identity 90 -num_threads 16 -outfmt '6 qseqid sseqid pident mismatch gapopen qlen slen length qstart qend sstart send evalue' -out ${ASM}/blast_result/CoAsm_rep.tsv
+#blastn -query ${file} -db ${HIP}/HIP11704 -perc_identity 90 -num_threads 16 -outfmt '6 qseqid sseqid pident mismatch gapopen qlen slen length qstart qend sstart send evalue' -out ${ASM}/blast_result/CoAsm_HIP_genome.tsv
+blastn -query ${file} -db ${PLS} -perc_identity 90 -num_threads 16 -outfmt '6 qseqid sseqid pident mismatch gapopen qlen slen length qstart qend sstart send evalue' -out ${ASM}/blast_result/CoAsm_plsdb.tsv
 
 
 
-for f in ${ASM}/blast_result/*.tsv;do
-	SAMPLE=${file##*/}
-	BASE=${SAMPLE%.tsv}
-	awk '$8 >=800' ${file} > ${ASM}/blast_result/filtered/${BASE}_800_90.tsv
-done
+#for f in ${ASM}/blast_result/*.tsv;do
+#	SAMPLE=${file##*/}
+#	BASE=${SAMPLE%.tsv}
+#	awk '$8 >=800' ${file} > ${ASM}/blast_result/filtered/${BASE}_800_90.tsv
+#done
 
 
 #>NC_004668.1 Enterococcus faecalis V583 chromosome, complete genome
