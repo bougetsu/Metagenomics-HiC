@@ -52,10 +52,20 @@ To use, combine results from blast against pTEF/HIP
     add 2 new contigs into "~/Documents/Work/project/HiC/CoAsm_150pe/Blast_result/plasmid_contig_checked.info"
 
 
-18 contigs in total, linked with XXXX contigs, XXXX of which were annotated with XXX kraken labels
+22 contigs in total, linked with XXXX contigs, XXXX of which were annotated with XXX kraken labels
 
 ```{sh}
+cd /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result
+grep "pTEF\|HIP" plasmid_contig_checked.info|cut -f 1 > plasmid_contigs_filtered_1117.list
+export LIST='/ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_contigs_filtered_1117.list'
+sed -i "s/$/\t/" $LIST
+for file in /ms/11/cong/project/HiC/BINNING/150PE_coassembly/HiC_mapping/*hic_counts.tsv;do \
+  grep -f $LIST ${file} >>  /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_dup_contigs \
+done
 
+cut -f 1 /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_dup_contigs > /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_dup_contigs.list
+cut -f 2 /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_dup_contigs >> /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_dup_contigs.list
+sort /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_dup_contigs.list|uniq > /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_contigs_1117.list
 ```
 
 
