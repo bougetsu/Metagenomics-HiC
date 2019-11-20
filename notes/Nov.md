@@ -18,6 +18,8 @@ b. take the abundance into consideration??
 
 Across samples, we need to unify the taxonomic labels were used at colnames.
 
+Kraken report taxonomic label was incident by 2 spaces, substitute with "" to make r readable
+
 
 1. filtered contigs
 
@@ -68,7 +70,18 @@ cut -f 2 /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasm
 sort /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_dup_contigs.list|uniq > /ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE/blast_result/plasmid_linked_contigs_1117.list
 ```
 
+In R, summarized by all the taxonomic labels in kraken annotated contigs.
+
+
 
 2. unfiltered contigs
 
+```
+grep -v -P "\tchr" plasmid_contig.list_checked |cut -f 1 > plasmid_contigs.unfiltered.list
+```
+ got 71 contigs, all needs to be annotated as pTEF or plasmid
   to use: 105 plasmid - "chr"
+
+
+
+####Run 2019 paper codes on git hub
