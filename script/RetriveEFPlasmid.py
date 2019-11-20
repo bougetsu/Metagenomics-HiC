@@ -1,103 +1,52 @@
-#! /usr/bin/env python3
-
 import argparse
 import sys
 import os
-import pands as pd
-import Bio.Entrez
+import pandas as pd
+from Bio import Entrez
+Entrez.email = "zhcong.pku@gmail.com"
+import time
 
 
-RETMAX = 10**9
-GB_EXT = ".gb"
-
-
-def parse_args(arg_lst):
+def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input", type=str, required=True,
                         help="A file with accessions to download")
-    parser.add_argument("-d", "--database", type=str, required=True,
-                        help="NCBI database ID")
-    parser.add_argument("-e", "--email", type=str, required=False,
-                        default="some_email@somedomain.com",
-                        help="An e-mail address")
-    parser.add_argument("-b", "--batch", type=int, required=False, default=100,
-                        help="The number of accessions to process per request")
     parser.add_argument("-o", "--output_dir", type=str, required=True,
                         help="The directory to write downloaded files to")
+    args = parser.parse_args()
+    return vars(args)
 
-    return parser.parse_args(arg_lst)
-
-def read_xls(file):
-    dat = pd.read_csv(file, sep = "\t", header = 0)
+def write_seq(in_file, dir):
+    dat = pd.read_csv(in_file, sep = "\t", header = 0)
     for index, row in dat.iterrows():
         strain = row['Strain']
         Replicons = row["Replicons"]
         reps = Replicons.split(";")
-        for r in reps:
-            name = r.split(":")
+        seq={}
+        print(strain+"\n")
+        print(dir)
+        with open(os.path.join(dir,  strain+".fasta"), "w") as output:
+            for x in reps:
+                if (x.split(":")[0].find("plasmid") > -1  ):
+                    handle = Entrez.efetch(db="nucleotide", id=x.split(":")[1].split("/")[0], rettype="fasta", retmode="text")
+                    record = handle.read()
+                    output.write(record.rstrip('\n'))
+        time.sleep(2)
 
 
-
-
-def read_accessions(fp):
-    with open(fp) as acc_lines:
-        return [line.strip() for line in acc_lines]
-
-
-def accessions_to_gb(accessions, db, batchsize, retmax):
-    def batch(sequence, size):
-        l = len(accessions)
-        for start in range(0, l, size):
-            yield sequence[start:min(start + size, l)]
-
-    def extract_records(records_handle):
-        buffer = []
-        for line in records_handle:
-            if line.startswith("LOCUS") and buffer:
-                # yield accession number and record
-                yield buffer[0].split()[1], "".join(buffer)
-                buffer = [line]
-            else:
-                buffer.append(line)
-        yield buffer[0].split()[1], "".join(buffer)
-
-    def process_batch(accessions_batch):
-        # get GI for query accessions
-        query = " ".join(accessions_batch)
-        query_handle = Bio.Entrez.esearch(db=db, term=query, retmax=retmax)
-        gi_list = Bio.Entrez.read(query_handle)['IdList']
-
-        # get GB files
-        search_handle = Bio.Entrez.epost(db=db, id=",".join(gi_list))
-        search_results = Bio.Entrez.read(search_handle)
-        webenv, query_key = search_results["WebEnv"], search_results["QueryKey"]
-        records_handle = Bio.Entrez.efetch(db=db, rettype="gb", retmax=batchsize,
-                                           webenv=webenv, query_key=query_key)
-        yield from extract_records(records_handle)
-
-    accession_batches = batch(accessions, batchsize)
-    for acc_batch in accession_batches:
-        yield from process_batch(acc_batch)
-
-
-def write_record(dir, accession, record):
-    with open(os.path.join(dir, accession + GB_EXT), "w") as output:
-        print(record, file=output)
-
-
-def main(argv):
-    args = parse_args(argv)
-    accessions = read_accessions(os.path.abspath(args.input))
-    op_dir = os.path.abspath(args.output_dir)
+def main():
+    c_args = parse_args()
+    in_file = os.path.abspath(c_args["input"])
+    op_dir = os.path.abspath(c_args["output_dir"])
     if not os.path.exists(op_dir):
         os.makedirs(op_dir)
-    dbase = args.database
-    Bio.Entrez.email = args.email
-    batchsize = args.batch
-
-    for acc, record in accessions_to_gb(accessions, dbase, batchsize, RETMAX):
-        write_record(op_dir, acc, record)
+    dat = pd.read_csv(in_file, sep = "\t", header = 0)
+    print("#######")
+    print(in_file)
+    write_seq(in_file, op_dir)
+    
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()
+

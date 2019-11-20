@@ -324,5 +324,84 @@ fastqc -q -t $threads -o ${out}/pre-QC_report -f fastq $reads_1 $reads_2
 
 
 4. get HiC coverage of each samples on coassembly
+5. Prodigal
 
+```
+dat='/net/ab/cb/68/cxz163430/project/HiC/Binning/BINNING_CO_150PE/BIN_REFINEMENT'
+for F in ${dat}/metawrap_50_10_bins/*.fa; do 
+  BASE=${F##*/} 
+  id=${BASE%.fa} 
+  prodigal -p meta -a ${dat}/proteins/${id}.faa -q -i ${F} -f gff -o ${dat}/proteins/${id}_prodigal.gff  
+done  
+
+```
+
+SOurmash
+
+`/net/ab/cb/68/cxz163430/data/sourmash/genbank-d2-k31.sbt.json`
+
+```
+sourmashgb='/ms/11/cong/data/Sourmash/genbank-d2-k31.sbt.json'
+dat='/ms/11/cong/project/HiC/BINNING/150PE_coassembly/BIN_REFINEMENT/metawrap_dRep'
+for F in ${dat}/dereplicated_genomes/*.fa; do 
+  BASE=${F##*/} 
+  id=${BASE%.fa}
+  sourmash compute --scaled 1000 -k 31 -o ${dat}/sourmash/${id}.sig $F 
+  sourmash gather -k 31 ${dat}/sourmash/${id}.sig ${sourmashgb} -o ${dat}/sourmash/${id}.csv > ${dat}/sourmash/${id}.sm
+done 
+
+```
+
+
+6. dRep
+
+202 genomes were reduced to 162.
+
+Do annotation and quant_bin at aleph
+
+```
+/net/ab/cb/68/cxz163430/project/HiC/Binning/BINNING_CO_150PE/metawrap_dRep/dereplicated_genomes
+```
+
+
+7. Get Hi-C links using connects.R
+
+  a. contigs class: plasmid, (rep), ARG
+
+  confirm plasmid contigs and ARG
+
+  using BLASTn results (V583, HIP, rep, PLS-DB) get plasmid contig if list, extract contig fasta to blast using website to confirm whether unique to plasmid sequence all also found hits on chr
+
+  ```
+  #/ms/11/cong/project/HiC/ASSEMBLY/MEGAHIT/CoAsm_150PE
+  seqkit  grep -f blast_result/plasdmid_contig.list final.contigs.fa > blast_result/plasdmid_contig.fa
+  ```
+
+  save manually checked results to `plasmid_contig_checked.info`
+
+######
+check k141_607023 cluster in bin3c and which is ef cluster in bin3c
+
+~ 80 bins in bin.19 in dRep and 208 in bin.38 in bin3c
+
+check completedness and contamination rate in bin.19+ other contigs
+
+after adding contigs from bin3C
+
+| bin    | size | completedness | contamination rate | Strain heterogeneity |
+|--------|------|---------------|--------------------|----------------------|
+| before | 82   | 98.41         | 0.37               | 50                   |
+| after  | 141  | 99.44         | 0.94               | 50.00                |
+
+Links STAT
+
+|                | V583    |         | HIP     |         | VE      |         |
+|----------------|---------|---------|---------|---------|---------|---------|
+| Day            | 0       | 13      | 0       | 13      | 0       | 13      |
+| total links    | 2998446 | 5364364 | 2655326 | 9029966 | 2612002 | 4363302 |
+| non-self links | 2789944 | 4513821 | 2447986 | 8371705 | 2430636 | 3690062 |
+| plasmid links  | 4       | 174     | 0       | 1178    | 2       | 1688    |
+| non clustered  | 2       | 32      | 0       | 362     | 2       | 318     |
+| ARG links      | 484     | 936     | 738     | 5352    | 468     | 986     |
+| non clustered  | 302     | 356     | 374     | 2990    | 232     | 374     |
 
