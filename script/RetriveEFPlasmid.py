@@ -31,7 +31,8 @@ def write_seq(in_file, dir):
                     handle = Entrez.efetch(db="nucleotide", id=x.split(":")[1].split("/")[0], rettype="fasta", retmode="text")
                     record = handle.read()
                     output.write(record.rstrip('\n'))
-        time.sleep(2)
+                    output.write("\n")
+        time.sleep(1)
 
 
 def main():
