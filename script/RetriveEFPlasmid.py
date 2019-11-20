@@ -32,7 +32,7 @@ def write_seq(in_file, dir):
                     record = handle.read()
                     output.write(record.rstrip('\n'))
                     output.write("\n")
-        time.sleep(1)
+        time.sleep(2)
 
 
 def main():
